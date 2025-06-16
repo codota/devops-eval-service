@@ -1,0 +1,32 @@
+replicaCount: 2
+
+image:
+  repository: us-central1-docker.pkg.dev/devops-eval-463110/docker-repository/tasks-service
+  pullPolicy: IfNotPresent
+  tag: 1.0.3
+
+service:
+  type: ClusterIP
+  port: 80
+  targetPort: 3000
+
+database:
+  url: null
+
+gateway:
+  enabled: true
+  name: "main-gateway"
+  namespace: "default"
+  host: "devops-eval.tabnine.com"
+
+resources:
+  limits:
+    cpu: 500m
+    memory: 512Mi
+  requests:
+    cpu: 250m
+    memory: 256Mi
+
+nodeSelector: {}
+tolerations: []
+affinity: {}

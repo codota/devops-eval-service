@@ -3,6 +3,8 @@ import cors from 'cors';
 import { Pool } from 'pg';
 import dotenv from 'dotenv';
 
+console.log("Starting server...");
+
 dotenv.config();
 
 const app = express();
@@ -134,7 +136,9 @@ app.delete('/api/tasks/:id', async (req, res) => {
 
 // Start server
 async function startServer() {
+    console.log("Initializing database...");
     await initDatabase();
+    console.log("Listening for incoming requests on port ${port}...");
     app.listen(port, () => {
         console.log(`Server running on port ${port}`);
     });

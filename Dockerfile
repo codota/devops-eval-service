@@ -19,6 +19,4 @@ RUN yarn install --frozen-lockfile --production=true && yarn cache clean
 
 EXPOSE 3000
 
-USER node
-
 CMD ["yarn", "start"]
