@@ -2,6 +2,7 @@ import express from 'express';
 import cors from 'cors';
 import { Pool } from 'pg';
 import dotenv from 'dotenv';
+import morgan from 'morgan';
 
 console.log("Starting server...");
 
@@ -12,6 +13,8 @@ const port = process.env.PORT || 3000;
 
 app.use(cors());
 app.use(express.json());
+
+app.use(morgan('combined'));
 
 // Database connection
 const pool = new Pool({
