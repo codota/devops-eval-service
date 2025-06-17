@@ -18,7 +18,7 @@ app.use(morgan('combined'));
 
 // Database connection
 const pool = new Pool({
-    connectionString: process.env.DATABASE_URL || 'postgresql://postgres:postgres@localhost/postgres',
+    connectionString: process.env.DB_URL || 'postgresql://postgres:postgres@localhost/postgres',
 });
 
 // Initialize database

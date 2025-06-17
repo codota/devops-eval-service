@@ -15,7 +15,7 @@ spec:
     - matches:
         - path:
             type: PathPrefix
-            value: /api
+            value: /tasks
       backendRefs:
         - name: {{ include "task-api.fullname" . }}
           port: {{ .Values.service.port }}
